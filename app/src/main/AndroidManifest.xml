@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.vs2.oneuptask" >
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".OneUpApplication"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ProductActivity"
+            android:label="@string/app_name" />
+
+
+        <activity
+            android:name=".ThankYouActivity"
+            android:label="@string/app_name" />
+        <!--Auth0 Lock-->
+        <activity
+            android:name="com.auth0.lock.LockActivity"
+            android:theme="@style/Lock.Theme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="a07KTh4AoB8QJOYUxJtjPhE2YGn58xeMqb" android:host="1uptask.auth0.com"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="com.auth0.lock.client-id" android:value="7KTh4AoB8QJOYUxJtjPhE2YGn58xeMqb"/>
+        <meta-data android:name="com.auth0.lock.domain-url" android:value="1uptask.auth0.com"/>
+        <!-- Enables the Android Pay API -->
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>
